@@ -9,7 +9,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # reading the data from a datafile located at the same directory as the Python code, and storing it in an array;
-arr = np.genfromtxt('data1.csv')
+url = 'https://raw.githubusercontent.com/AjayRahulRaja/Fundamentals_of_Data_Science/main/coding_project/data1.csv'
+arr = np.genfromtxt(url, delimiter=',')
+type(arr)
 
 # creating another array, representing the distribution of newborn weights in a given dataset
 counts, bins = np.histogram(arr, bins=400)
@@ -38,7 +40,5 @@ plt.ylabel("Cummulative counts", fontsize=10)
 plt.legend(bbox_to_anchor=(1.02, 0.99))
 plt.xlim(1.5, 5.0, 0.5)
 plt.ylim(0, 410, 50)
-plt.savefig('C:/Users/Lenovo/Desktop/UK/Hertfordshire/SEM 01/Fundamentals of Data Science/coding project/plot.png', dpi=300, bbox_inches='tight')
+# plt.savefig('C:/Users/Lenovo/Desktop/UK/Hertfordshire/SEM 01/Fundamentals of Data Science/coding project/plot.png', dpi=300, bbox_inches='tight')
 plt.show()
-
-
