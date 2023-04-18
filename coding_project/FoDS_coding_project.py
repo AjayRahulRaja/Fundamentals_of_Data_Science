@@ -2,7 +2,7 @@
 """
 Created on Sat Apr  8 16:58:27 2023
 
-@author: Lenovo
+@author: Ajay
 """
 
 import numpy as np
@@ -31,8 +31,10 @@ cum_sum = np.append(cum_sum, 0)
 plt.figure(figsize=(6,4))
 plt.style.use('ggplot')
 new_arr = np.vstack((bins, cum_sum))
-plt.axvline(W, ls='--', color='blue', label='average weigth of newborn babies')
 plt.axvline(X, ls='--', color='green', label='new born babies above 33%')
+plt.text(X, 300, f' {np.round(X, 4)}', c='black')
+plt.axvline(W, ls='--', color='blue', label='average weigth of newborn babies')
+plt.text(W-.45, 100, f' {np.round(W, 4)}', c='black')
 plt.bar(new_arr[0], new_arr[1])
 plt.title("Distribution of new born babies in certain regions of Europe", fontsize=10)
 plt.xlabel("Distribution", fontsize=10)
