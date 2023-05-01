@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Thu Apr 27 14:10:56 2023
-
 @author: Ajay
 """
 
@@ -69,5 +68,5 @@ plt.ylim(0.00, 0.09, 0.01)
 
 leg = plt.legend(bbox_to_anchor = (1.01, 0.99), fontsize = 10)
 leg.get_frame().set_facecolor('lightgrey')
-# plt.savefig('C:/Users/Lenovo/Desktop/UK/Hertfordshire/SEM 01/Fundamentals of Data Science/coding project/plot.png', dpi = 300, bbox_inches = 'tight')
+plt.savefig('plot.png', dpi = 300, bbox_inches = 'tight')
 plt.show()
