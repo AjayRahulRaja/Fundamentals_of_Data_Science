@@ -53,14 +53,14 @@ plt.style.use("ggplot")
 plt.gca().set_facecolor('lightgrey')
 
 #distribution
-plt.bar(bincenter, counts_norm, width = 0.88 * binwidth, color = "green", label = "New born babies distribution")
+plt.bar(bincenter, counts_norm, width = 0.88 * binwidth, color = "royalblue", label = "New born babies distribution")
 
 #mean value
 plt.plot([W, W], [0, np.max(counts_norm) + 0.002], 'k--', c = "red")
 plt.text(W + 0.05, 0.081, "Mean value is 3.3921", c = "black", fontsize = 10)
 
 #X value
-plt.bar(bincenter, x_bar, width = 0.88 * binwidth, alpha = 0.5, color = "blue", label = "33% of newborns are born with a weight above X")
+plt.bar(bincenter, x_bar, width = 0.88 * binwidth, alpha = 0.5, color = "limegreen", label = "33% of newborns are born with a weight above X")
 plt.text(X + 0.75, 0.050, "X value is 3.1625", c = "black", fontsize = 10)
 
 plt.title("Distribution of new born babies in certain regions of Europe", fontsize = 10)
