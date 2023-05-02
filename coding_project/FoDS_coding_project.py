@@ -39,14 +39,13 @@ W = np.sum(counts_norm * bincenter)
 
 # using the distribution to calculate another value, X
 # The value of X is such that 33% of newborns from the distribution are born with a weight above X
-# X = np.percentile(bincenter, 100 - 33)
-X = np.argmin(np.abs(cum_sum - 0.67))
+X = np.argmin(np.abs(cum_sum - 0.33))
 X = bincenter[X]
 
 print("Mean value is: ", W)
 print("X value is: ", X)
 
-x_bar = counts_norm * (bincenter <= X)
+x_bar = counts_norm * (bincenter >= X)
 
 plt.figure(figsize = (6, 4))
 # plotting the array as a histogram
@@ -54,15 +53,15 @@ plt.style.use("ggplot")
 plt.gca().set_facecolor('lightgrey')
 
 #distribution
-plt.bar(bincenter, counts_norm, width = 0.88 * binwidth, color = "royalblue", label = "New born babies distribution")
+plt.bar(bincenter, counts_norm, width = 0.88 * binwidth, color = "green", label = "New born babies distribution")
 
 #mean value
-plt.plot([W, W], [0, np.max(counts_norm) + 0.002], 'k--')
-plt.text(3.5, 0.081, "Mean value is 3.3921", c = "black", fontsize = 10)
+plt.plot([W, W], [0, np.max(counts_norm) + 0.002], 'k--', c = "red")
+plt.text(W + 0.05, 0.081, "Mean value is 3.3921", c = "black", fontsize = 10)
 
 #X value
-plt.bar(bincenter, x_bar, width = 0.88 * binwidth, alpha = 0.5, color = "white", label = "33% of newborns are born with a weight above X")
-plt.text(X+0.05, 0.050, "X value is 3.6125", c = "black", fontsize = 10)
+plt.bar(bincenter, x_bar, width = 0.88 * binwidth, alpha = 0.5, color = "blue", label = "33% of newborns are born with a weight above X")
+plt.text(X + 0.75, 0.050, "X value is 3.1625", c = "black", fontsize = 10)
 
 plt.title("Distribution of new born babies in certain regions of Europe", fontsize = 10)
 plt.xlabel("Weights of newborn babies (Distribution)", fontsize = 10)
