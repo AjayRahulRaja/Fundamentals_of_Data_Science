@@ -61,7 +61,8 @@ plt.text(W + 0.05, 0.081, "Mean value is 3.3921", c = "black", fontsize = 10)
 
 #X value
 plt.bar(bincenter, x_bar, width = 0.88 * binwidth, alpha = 0.5, color = "limegreen", label = "33% of newborns are born with a weight above X")
-plt.text(X + 0.75, 0.050, "X value is 3.1625", c = "black", fontsize = 10)
+plt.plot([X, X], [0, 0.055], 'k--', c = "red")
+plt.text(X-0.85, 0.055, "X value is 3.1625", c = "black", fontsize = 10)
 
 plt.title("Distribution of new born babies in certain regions of Europe", fontsize = 10)
 plt.xlabel("Weights of newborn babies (Distribution)", fontsize = 10)
