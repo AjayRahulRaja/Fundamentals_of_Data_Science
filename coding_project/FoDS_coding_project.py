@@ -54,7 +54,7 @@ plt.style.use("ggplot")
 plt.gca().set_facecolor('lightgrey')
 
 #distribution
-plt.bar(bincenter, counts_norm, width = 0.88 * binwidth, color = "blue", label = "New born babies distribution")
+plt.bar(bincenter, counts_norm, width = 0.88 * binwidth, color = "cornflowerblue", label = "New born babies distribution")
 
 #mean value
 plt.plot([W, W], [0, np.max(counts_norm) + 0.002], 'k--')
