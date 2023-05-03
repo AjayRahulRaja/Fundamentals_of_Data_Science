@@ -10,8 +10,7 @@ import matplotlib.pyplot as plt
 
 # reading data from the datafile, located at same dir as the .Py code
 # and storing it in an array
-url = 'https://raw.githubusercontent.com/AjayRahulRaja/Fundamentals_of_Data_Science/main/coding_project/data1.csv'
-arr = np.genfromtxt(url, delimiter = ',')
+arr = np.genfromtxt('data1.csv', delimiter = ',')
 type(arr)
 
 # creating another array, representing the distribution of newborn weights in a given dataset
@@ -39,7 +38,7 @@ W = np.sum(counts_norm * bincenter)
 
 # using the distribution to calculate another value, X
 # The value of X is such that 33% of newborns from the distribution are born with a weight above X
-X = np.argmin(np.abs(cum_sum - 0.33))
+X = np.argmin(np.abs(cum_sum - 0.67))
 X = bincenter[X]
 
 print("Mean value is: ", W)
@@ -56,17 +55,16 @@ plt.gca().set_facecolor('lightgrey')
 plt.bar(bincenter, counts_norm, width = 0.88 * binwidth, color = "royalblue", label = "New born babies distribution")
 
 #mean value
-plt.plot([W, W], [0, np.max(counts_norm) + 0.002], 'k--', c = "red")
+plt.plot([W, W], [0, np.max(counts_norm) + 0.002], 'k--', c = "black")
 plt.text(W + 0.05, 0.081, "Mean value is 3.3921", c = "black", fontsize = 10)
 
 #X value
 plt.bar(bincenter, x_bar, width = 0.88 * binwidth, alpha = 0.5, color = "limegreen", label = "33% of newborns are born with a weight above X")
-plt.plot([X, X], [0, 0.055], 'k--', c = "red")
-plt.text(X-0.85, 0.055, "X value is 3.1625", c = "black", fontsize = 10)
+plt.text(X+0.35, 0.055, "<-- X value is 3.6125", c = "black", fontsize = 10)
 
-plt.title("Distribution of new born babies in certain regions of Europe", fontsize = 10)
-plt.xlabel("Weights of newborn babies (Distribution)", fontsize = 10)
-plt.ylabel("Normalised Counts", fontsize = 10)
+plt.title("Distribution of weight of new born babies in certain regions of Europe", fontsize = 10)
+plt.xlabel("Weight of newborn babies", fontsize = 10)
+plt.ylabel("Probability", fontsize = 10)
 plt.xlim(2.0, 5.0, 0.5)
 plt.ylim(0.00, 0.09, 0.01)
 leg = plt.legend(bbox_to_anchor = (1.01, 0.99), fontsize = 10)
