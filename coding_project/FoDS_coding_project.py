@@ -55,12 +55,13 @@ plt.gca().set_facecolor('lightgrey')
 plt.bar(bincenter, counts_norm, width = 0.88 * binwidth, color = "royalblue", label = "New born babies distribution")
 
 #mean value
-plt.plot([W, W], [0, np.max(counts_norm) + 0.002], 'k--', c = "black")
-plt.text(W + 0.05, 0.081, "Mean value is 3.3921", c = "black", fontsize = 10)
+plt.plot([W - 0.025, W - 0.025], [0, np.max(counts_norm) + 0.002], 'k--', c = "black")
+plt.text(W + 0.025, 0.081, "Mean value is 3.3921", c = "black", fontsize = 10)
 
 #X value
 plt.bar(bincenter, x_bar, width = 0.88 * binwidth, alpha = 0.5, color = "limegreen", label = "33% of newborns are born with a weight above X")
-plt.text(X+0.35, 0.055, "<-- X value is 3.6125", c = "black", fontsize = 10)
+plt.plot([X - 0.025, X - 0.025], [0, 0.056 + 0.002], 'k--', c = "black")
+plt.text(X + 0.025, 0.056, "--------> X value is 3.6125", c = "black", fontsize = 10)
 
 plt.title("Distribution of weight of new born babies in certain regions of Europe", fontsize = 10)
 plt.xlabel("Weight of newborn babies", fontsize = 10)
